@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
@@ -63,12 +62,15 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setQuestion() {
         defaultOptionsView()
-
+        setOptionMode(true)
         val question: Question = mQuestionsList!![mCurrentPosition - 1]
         ivImage?.setImageResource(question.image)
         progressBar?.progress = mCurrentPosition
         progressBar?.max = mQuestionsList!!.size
-        tvProgress?.text = "$mCurrentPosition/${progressBar?.max}"
+        val txtTvProgBar = "$mCurrentPosition/${progressBar?.max}"
+
+        //tvProgress?.text = "$mCurrentPosition/${progressBar?.max}"
+        tvProgress?.text = txtTvProgBar
         tvQuestion?.text = question.question
         tvOptionOne?.text = question.optionOne
         tvOptionTwo?.text = question.optionTwo
@@ -76,9 +78,25 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tvOptionFour?.text = question.optionFour
 
         if (mCurrentPosition == mQuestionsList!!.size) {
-            btnSubmit?.text = "Beenden"
+            //btnSubmit?.text = "Beenden"
+            btnSubmit?.setText(R.string.bSubmitEnd)
         } else {
-            btnSubmit?.text = "Senden"
+            btnSubmit?.setText(R.string.bSubmitSend)
+            //btnSubmit?.text = "Senden"
+        }
+    }
+
+    private fun setOptionMode(enabler: Boolean) {
+        if (enabler) {
+            tvOptionOne?.isEnabled = enabler
+            tvOptionTwo?.isEnabled = enabler
+            tvOptionThree?.isEnabled = enabler
+            tvOptionFour?.isEnabled = enabler
+        } else {
+            tvOptionOne?.isEnabled = enabler
+            tvOptionTwo?.isEnabled = enabler
+            tvOptionThree?.isEnabled = enabler
+            tvOptionFour?.isEnabled = enabler
         }
     }
 
@@ -161,17 +179,22 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 } else {
+                    setOptionMode(false)
+
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
                     if (question!!.correctOption != mSelectedOptionPosition) {
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+
                     } else {
                         mCorrectAnswers++
                     }
                     answerView(question.correctOption, R.drawable.correct_option_border_bg)
                     if (mCurrentPosition == mQuestionsList!!.size) {
-                        btnSubmit?.text = "Ende"
+                        btnSubmit?.setText(R.string.bSubmitEnd)
+                        //btnSubmit?.text = "Ende"
                     } else {
-                        btnSubmit?.text = "Nächste Frage"
+                        btnSubmit?.setText(R.string.bSubmitNext)
+                        //btnSubmit?.text = "Nächste Frage"
                     }
                     mSelectedOptionPosition = 0
 

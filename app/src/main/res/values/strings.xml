@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">HerbysQuizzApp</string>
+    <string name="app_name">Herby\'s Quizz-App</string>
+    <string name="welcome">Servus</string>
+    <string name="hint">zB Erich Honnecker</string>
+    <string name="inputName_desc">Bitte Name eintragen</string>
+    <string name="bSubmitEnd">Beenden</string>
+    <string name="bSubmitSend">Senden</string>
+    <string name="bSubmitNext">Nächste Frage</string>
+    <string name="btnStartTxt">Los geht\'s</string>
 </resources>
