@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Herby\'s Quizz-App</string>
-    <string name="welcome">Servus</string>
+    <string name="welcome">Servus :-)</string>
     <string name="hint">zB Erich Honnecker</string>
     <string name="inputName_desc">Bitte Name eintragen</string>
     <string name="bSubmitEnd">Beenden</string>
     <string name="bSubmitSend">Senden</string>
     <string name="bSubmitNext">Nächste Frage</string>
     <string name="btnStartTxt">Los geht\'s</string>
+    <string name="tvResultTxt">Ergebnis</string>
+    <string name="imgContentDescription">Bild</string>
+    <string name="tvCongratsTxt">Hey Glückwunsch, geschafft!</string>
+    <string name="bAgainTxt">Nochmal</string>
+    <string name="bRepeatTxt">Nochmal</string>
+    <string name="bFinishTxt">Beenden</string>
 </resources>

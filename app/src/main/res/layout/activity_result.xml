@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Ergebnis"
+        android:text="@string/tvResultTxt"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -23,7 +23,7 @@
         android:id="@+id/iv_trophy"
         android:layout_width="357dp"
         android:layout_height="392dp"
-        android:contentDescription="image"
+        android:contentDescription="@string/imgContentDescription"
         android:src="@drawable/ic_trophy" />
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hey, Glückwunsch!"
+        android:text="@string/tvCongratsTxt"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -67,28 +67,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:background="@android:color/white"
+            android:background="@color/purple_700"
             android:minHeight="48dp"
-            android:text="Nochmal"
-            android:textColor="#039BE5"
+            android:text="@string/bRepeatTxt"
+            android:textColor="@color/lightgrey"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:id="@+id/btn_finish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@android:color/white"
+            android:background="@color/purple_700"
             android:minHeight="48dp"
-            android:text="Beenden"
-            android:textColor="#039BE5"
+            android:text="@string/bFinishTxt"
+            android:textColor="@color/lightgrey"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
 
 </LinearLayout>
